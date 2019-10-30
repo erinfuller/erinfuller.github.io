@@ -1,0 +1,70 @@
+Reflection
+
+Many, many, many of my bugs were incorrect spelling of an element or a typo of a variable name. These were frustrating because they were such silly mistakes but hard to avoid. 
+
+A challenge I had was because I was changing content (especially CSS classes, tags, IDs) so much I didn’t even know my own code or structure and was often lost. I think this is just something that improves as you get better with Web Development and know how to have a plan to start a project and are not just doing trial and error.
+
+It took me along time to understand objects but I finally got it. So my site doesn’t show the proper orders in the cart but if you look in the console it does show the array with any bun orders you submitted through the “add to cart button” - and I’m still pretty proud of that.
+
+
+
+Programming Concepts
+
+Variables: Variables are containers that represent a value (values or strings).
+Examples of variables I used:
+	var cartItems - defined number, started equal to zero but was updated with an increment operation (++) each time an order was added to cart.
+	var selectedGlaze - defined a string, started as an empty value which was updated each time a new glaze was selected.
+
+Conditional - These are functions that execute based on if a condition is true or false.
+Example of Conditional I used:
+function changeTopImage(buttonName) {
+    if (buttonName == "d-1") {
+        document.getElementById('large-img2').src='SVG/glaze-1.svg';
+        selectedGlaze = "Sugar Milk";
+    } else if (buttonName == "d-2") {
+        document.getElementById('large-img2').src='SVG/glaze-2.svg';
+        selectedGlaze = "Vanilla Sugar Milk";
+    } else if (buttonName == "d-3") {
+        document.getElementById('large-img2').src='SVG/glaze-3.svg';
+        selectedGlaze = "Double Chocolate";
+    } else if (buttonName == "d-4") {
+        document.getElementById('large-img2').src='SVG/';
+        selectedGlaze = "No Glaze";
+    }
+}
+Every time a user the image on the visualizer and the selectedGlaze variable (later used in constructing an order object) were updated to reflect their choice.
+
+Objects - An object is a collection of properties, and a property is an association between a name (or key) and a value.
+Example of Objects I created:
+function bunSubmission(base, glaze) {
+ 	this.base = base;
+	this.glaze = glaze;
+}
+… 
+var newOrder = new bunSubmission(selectedBun, selectedGlaze);
+The first snippet is the object constructor I made. A bunSubmission is consisted of the base and glaze the user chooses. After submitting, the program creates a new object based on the current selectedBun and selectedGlaze.
+
+Array - JavaScript arrays are used to store multiple values in a single variable.
+Example of Array I created:
+var bunOrders = [];
+…
+bunOrders.push(newOrder);
+I created an empty array bunOrders and in the addToCart function, I pushed the new objects I just made to the array.
+
+
+function - A JavaScript function is a block of code designed to perform a particular task that is executed when something calls it.
+Example of function I created:
+function addToCart() {
+    cartItems++;
+    console.log(cartItems); 
+        
+    document.getElementById('cartTag').innerHTML = 'cart [items in cart: ' + cartItems +']';
+    
+    bunSubmission
+    
+    var newOrder = new bunSubmission(selectedBun, selectedGlaze);
+    bunOrders.push(newOrder);
+    
+    console.log(bunOrders); //shows array of actual orders
+}
+This is called when the user presses the Add to Cart button.
