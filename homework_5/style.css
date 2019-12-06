@@ -1,0 +1,269 @@
+header, footer {
+    background-color: #fda7a7;
+    color: white;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+header a {
+    font-style: normal;
+    color: grey;
+    text-decoration: none;
+    padding: 5px;
+    text-align: right;
+}
+
+h1 {
+    font-family: 'Podkova', serif;
+    font-style: normal;
+    font-size: 50px;
+    margin: 0;
+    color: white;
+}
+
+h2 {
+  font-family: 'Josefin Slab', serif;
+  font-style: italic;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+
+  align-self: left;
+  text-align: left;
+  align-items: left;
+  align-content: left;
+
+  color: grey;
+}
+
+body {
+    margin: 0;
+    font-family: 'Josefin Slab', serif;
+    
+    font-style: normal;
+    color: #3d3d3d;
+    text-align: center;
+}
+
+p {
+    font-size: 20px;
+    padding: 12px;
+    
+    margin: 0;
+    font-family: 'Josefin Slab', serif;
+    
+    font-style: normal;
+    color: #3d3d3d;
+    text-align: center;
+}
+
+
+/*********** Content ************/ 
+
+img {
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    padding: 0px;
+}
+
+
+.large-img {
+    width: 100%;
+    height: 100%;
+}
+
+/*********** Grid  Sizez ************/ 
+
+.box {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    grid-auto-rows: 500px;
+    grid-auto-flow: column;
+}
+
+
+button { 
+    cursor: pointer; 
+    position: relative;
+    background:red;
+    border:none; /*delete the default one*/
+    border: 0px; /*add my own border */ 
+
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.home-grid {
+    max-height: 60vh;   
+    width: 94%;
+    margin: 3%;
+    
+    display: grid;    
+    grid-template-columns: 50% repeat(3, 1fr);
+    grid-template-rows: 40px repeat(2, 1fr);
+    grid-row-gap: 15px;
+    grid-column-gap: 20px;
+}
+
+.bun-grid {
+    width: 94%;
+    margin: 3%;
+    height: 720px;
+        
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    justify-content: center;
+
+    grid-template-columns: 50% repeat(12, 1fr);
+    grid-template-rows: 40px 2fr 2fr 40px 2fr 40px 1fr 20px 1fr;
+    grid-row-gap: 15px;
+    grid-column-gap: 20px;
+    max-height: 50%;        
+}
+
+.a {
+    background-color: #fda7a7;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.bun-a {
+    background-color: #fda7a7;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row: 2 / span 8;
+}
+
+/*Base Options*/
+.c-1 {
+    background-color: #fedbdb;
+    grid-column: 2 / span 4;
+
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.c-2 {
+    background-color: #fedbdb;
+    grid-column: 6 / span 4;
+
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.c-3 {
+    background-color: #fedbdb;
+    grid-column: 10 / span 4;
+
+
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+/*Glaze Options*/
+.d-1 {
+    background-color: #fedbdb;
+    grid-column: 2 / span 3;
+
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.d-2 {
+    background-color: #fedbdb;
+    grid-column: 5 / span 3;
+
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.d-3 {
+    background-color: #fedbdb;
+    grid-column: 8 / span 3;
+
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.d-4 {
+    background-color: #fedbdb;
+    grid-column: 11 / span 3;
+
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.e-1 {
+    background-color: grey;
+    grid-column: 2 / span 8;
+
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.e-2 {
+    background-color: grey;
+    grid-column: 10 / span 4;
+
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+/*
+.title {
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 0 0px 0px 0 rgba(0, 0, 0, 0);
+}
+*/
+
+.bun-title {
+    grid-column: 2 / span 11;
+}
+
+/*********** Grid Aesthetics ************/ 
+
+.b {
+    background-color: #fedbdb;
+}
+
+.b:hover {
+    background-color: #ffe8e8;
+}
+
+
+.choice {
+    background-color: purple;
+}
+
+.choice-inactive {
+    
+}
+
+.choice:active {
+
+}
+
+.choice:hover {
+  background: #C0D6DF;
+  color: #FFF;
+}
+
+
+
+
+
