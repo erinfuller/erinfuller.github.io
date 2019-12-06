@@ -4,19 +4,13 @@ var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
 
 var today = mm + '/' + dd + '/' + yyyy;
-console.log(today);
 
 
-
-
-
-/* A key/value dictionary for texts to be displayed.
- * The keys are paired with each image's alt attribute. 
- */
+// A key/value dictionary for texts to be displayed. The keys are paired with each image's alt attribute.
 
 var texts = {
   "default_title" : "Horoscope for " + today,
-  "default_description" : "Erin Fuller",
+  "default_description" : "Find your Sign to See your Horoscope for the Day | <em> PUI Fall 2019 Project - Erin Fuller <em>",
     
   "item1_title" : "Aries",
   "item1_description" : "March 21 - April 20",
@@ -58,6 +52,7 @@ var texts = {
 
 var sign_select; 
 
+
 // Hover Over State to Show Sun Sign and Dates Information
 $(document).ready(function(){
     $("#item_title").html(texts["default_title"]);
@@ -70,8 +65,7 @@ $(document).ready(function(){
     },
       click : function(event){
           var sign = $(event.target).attr("alt");
-          var sign_select = texts[sign+"_title"];
-          console.log(sign_select);
+          sign_select = texts[sign+"_title"];
       },
       mouseleave : function(event){
       $("#item_title").html(texts["default_title"]);
@@ -83,22 +77,155 @@ $(document).ready(function(){
 
 
 
+var aries;
+var taurus;
+var gemini;
+var cancer;
+var leo;
+var virgo;
+var libra;
+var scorpio;
+var sagittarius;
+var capricorn;
+var aquarius;
+var pisces;
+
+
+// Pulling the daily horoscope for each sign, I was hoping there was an easier way to do this with a loop or something but the 
+// way the API is accessed by a URL for each sign made it difficult. I commented one ajax request and the rest are the same template
+
 $.ajax({
     type:'POST',
-    url:'https://aztro.sameerkumar.website?sign=aries&day=today',
+    url:'https://aztro.sameerkumar.website?sign=aries&day=today', // URL with correct star sign
     success:function(data){
-        console.log(data.description);
-//        aries = data.description;
-        document.getElementById('horo').innerHTML = data.description;
-    }
+        aries = data.description; // update global variable
+    },
+    async: false, // <- this turns it into synchronous - global variables able to be updated
+});
+
+
+$.ajax({
+    type:'POST',
+    url:'https://aztro.sameerkumar.website?sign=taurus&day=today', 
+    success:function(data){
+        taurus = data.description; 
+    },
+    async: false,  
+});
+
+
+$.ajax({
+    type:'POST',
+    url:'https://aztro.sameerkumar.website?sign=gemini&day=today',
+    success:function(data){
+        gemini = data.description;
+    },
+    async: false,  
+});
+
+$.ajax({
+    type:'POST',
+    url:'https://aztro.sameerkumar.website?sign=cancer&day=today',
+    success:function(data){
+        cancer = data.description;
+    },
+    async: false,  
+});
+
+$.ajax({
+    type:'POST',
+    url:'https://aztro.sameerkumar.website?sign=leo&day=today',
+    success:function(data){
+        leo = data.description;
+    },
+    async: false,  
+});
+
+$.ajax({
+    type:'POST',
+    url:'https://aztro.sameerkumar.website?sign=virgo&day=today',
+    success:function(data){
+        virgo = data.description;
+    },
+    async: false,  
+});
+
+$.ajax({
+    type:'POST',
+    url:'https://aztro.sameerkumar.website?sign=libra&day=today',
+    success:function(data){
+        libra = data.description;
+    },
+    async: false,  
+});
+
+$.ajax({
+    type:'POST',
+    url:'https://aztro.sameerkumar.website?sign=scorpio&day=today',
+    success:function(data){
+        scorpio = data.description;
+    },
+    async: false,  
+});
+
+$.ajax({
+    type:'POST',
+    url:'https://aztro.sameerkumar.website?sign=sagittarius&day=today',
+    success:function(data){
+        sagittarius = data.description;
+    },
+    async: false,  
+});
+
+$.ajax({
+    type:'POST',
+    url:'https://aztro.sameerkumar.website?sign=capricorn&day=today',
+    success:function(data){
+        capricorn = data.description;
+    },
+    async: false,  
+});
+
+$.ajax({
+    type:'POST',
+    url:'https://aztro.sameerkumar.website?sign=aquarius&day=today',
+    success:function(data){
+        aquarius = data.description;
+    },
+    async: false,  
+});
+
+$.ajax({
+    type:'POST',
+    url:'https://aztro.sameerkumar.website?sign=pisces&day=today',
+    success:function(data){
+        pisces = data.description;
+    },
+    async: false,
 });
 
 
 
+// Uncomment below to verfiy in console that all horoscopes are unique
+
+//console.log("aries =" + aries);
+//console.log("taurus =" + taurus);
+//console.log("gemini =" + gemini);
+//console.log("cancer =" + cancer);
+//console.log("leo =" + leo);
+//console.log("virgo =" + virgo);
+//console.log("libra =" + libra);
+//console.log("scorpio =" + scorpio);
+//console.log("sagittarius =" + sagittarius);
+//console.log("capricorn =" + capricorn);
+//console.log("aquarius =" + aquarius);
+//console.log("pisces =" + pisces);
 
 
-
-
+// update pop-up HTML
+function updatePop(sign) {
+    document.getElementById('horo').innerHTML = sign;
+}
 
 
 

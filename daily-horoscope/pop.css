@@ -1,9 +1,11 @@
-/*https://codepen.io/timothylong/pen/HhAer*/
-
+/* ============================================================================================== 
+Pop Up 
+Adapted from: https://codepen.io/timothylong/pen/HhAer
+================================================================================================= */
 
 .modal-window {
 	 position: fixed;
-	 background-color: rgba(0, 0, 0, 0.5);
+	 background-color: rgba(0, 0, 0, 0.7);
 	 top: 0;
 	 right: 0;
 	 bottom: 0;
@@ -26,8 +28,11 @@
 	 left: 50%;
 	 transform: translate(-50%, -50%);
 	 padding: 2em;
-	 background: #fff;
+     background: linear-gradient(45deg, rgba(139,74,196,0.9) 0%, rgba(238,143,51,0.9) 100%);
+     border-radius: 25px;
 }
+
+    
  .modal-window header {
 	 font-weight: bold;
 }
@@ -35,8 +40,9 @@
 	 font-size: 150%;
 	 margin: 0 0 15px;
 }
+
  .modal-close {
-	 color: black;
+	 color: white;
 	 line-height: 50px;
 	 font-size: 80%;
 	 position: absolute;
@@ -46,36 +52,5 @@
 	 width: 70px;
 	 text-decoration: none;
 }
- .modal-close:hover {
-	 color: black;
-}
-/* Demo Styles */
- html, body {
-	 height: 100%;
-}
 
- a {
-	 color: inherit;
-}
- .container {
-	 display: grid;
-	 justify-content: center;
-	 align-items: center;
-	 height: 100vh;
-}
- .modal-window div:not(:last-of-type) {
-	 margin-bottom: 15px;
-}
- small {
-	 color: #aaa;
-}
- .btn {
-/*	 background-color: #fff;*/
-	 padding: 1em 1.5em;
-	 border-radius: 3px;
-	 text-decoration: none;
-}
- .btn i {
-	 padding-right: 0.3em;
-}
- 
+
